@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reddit Persona Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+        textarea {
+            width: 100%;
+            height: 500px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            padding: 10px;
+            font-size: 15px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧠 Reddit Persona Generator</h1>
+    <form method="POST">
+        <label for="profile_url">Reddit Profile URL:</label><br>
+        <input type="text" name="profile_url" required>
+        <button type="submit">Generate Persona</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if persona %}
+        <h2>📝 Generated Persona</h2>
+        <textarea readonly>{{ persona }}</textarea>
+    {% endif %}
+</body>
+</html>

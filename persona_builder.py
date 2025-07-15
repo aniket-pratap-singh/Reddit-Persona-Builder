@@ -14,9 +14,8 @@ api_key = os.getenv("GROQ_API_KEY")
 GROQ_API_KEY = api_key  
 GROQ_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
 
-def get_response():
-    username=extract_username("https://www.reddit.com/user/Hungry-Move-6603/comments/")
-    print(username)
+def get_response(url):
+    username=extract_username(url)
     data=fetch_user_data(username)
     last_message=f'''
             You're an expert UX researcher and character analyst. Based on the following Reddit user's public posts and comments, build a persona formatted like the example below.
@@ -24,7 +23,7 @@ def get_response():
             ---
             🎯 Example Persona Format:
 
-            Name: Lucas Mellor  
+            Name: Username  
             Age: 31  
             Occupation: Content Manager  
             Status: Single  
@@ -89,12 +88,11 @@ def get_response():
         response = requests.post(url, headers=headers, json=data)
         response.raise_for_status()
         reply = response.json()["choices"][0]["message"]["content"].strip()
-        print(reply)
         os.makedirs("output", exist_ok=True)
         with open("output/output.txt", "w", encoding="utf-8") as f:
             f.write(reply)
+        return reply
     except requests.exceptions.RequestException as e:
         print("❌ Groq API Error:", e)
         return "🤖 \n: Sorry, I couldn't process that right now."
     
-get_response()
