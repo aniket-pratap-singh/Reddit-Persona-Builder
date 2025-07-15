@@ -33,7 +33,7 @@ The generated text persona follows the given visual and structural layout.
 ⚙️ Setup Instructions
 1. 🧪 Clone the Repository
    
-        git clone https://github.com/aniket-pratap-singh/Reddit-Persona-Generator.git
+        git clone https://github.com/aniket-pratap-singh/Reddit-Persona-Builder.git
         cd Reddit-Persona-Generator
 2. 🐍 Create Virtual Environment
    
