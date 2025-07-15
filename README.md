@@ -19,6 +19,7 @@ The generated text persona follows the given visual and structural layout.
 
 📁 Project Structure
     Reddit_Persona/
+    
     ├── app.py                    ← Flask web app
     ├── persona_builder.py       ← Builds prompts & uses Groq to generate persona
     ├── reddit_scrapper.py        ← Extracts Reddit data from profile
@@ -31,21 +32,26 @@ The generated text persona follows the given visual and structural layout.
     └── README.md
 ⚙️ Setup Instructions
 1. 🧪 Clone the Repository
-    git clone https://github.com/yourusername/Reddit-Persona-Generator.git
-    cd Reddit-Persona-Generator
+   
+        git clone https://github.com/yourusername/Reddit-Persona-Generator.git
+        cd Reddit-Persona-Generator
 2. 🐍 Create Virtual Environment
-    python -m venv venv
-    source venv/bin/activate    # On Windows: venv\Scripts\activate
+   
+        python -m venv venv
+        source venv/bin/activate    # On Windows: venv\Scripts\activate
 3. 📦 Install Requirements
-    pip install -r requirements.txt
+   
+        pip install -r requirements.txt
 4. 🔐 Add API Key
-    Create a .env file:
-    GROQ_API_KEY=your_groq_api_key_here
-    Don’t have one? Get your free Groq key from https://console.groq.com
+   
+        Create a .env file:
+        GROQ_API_KEY=your_groq_api_key_here
+        Don’t have one? Get your free Groq key from https://console.groq.com
 
 🚀 Run the App
-    python app.py
-    Then visit: http://localhost:5000
+
+        python app.py
+        Then visit: http://localhost:5000
 
 🧠 How It Works
     User submits Reddit profile URL
@@ -63,22 +69,25 @@ The generated text persona follows the given visual and structural layout.
         Output is shown on the page & saved in output/{username}_persona.txt
 
 ✅ Example Input
-    https://www.reddit.com/user/Hungry-Move-6603/
-✅ Example Output (snippet)
-    Name: Hungry-Move-6603
-    Age: 27
-    Occupation: Student
-    Status: Single
-    Location: Lucknow, India
-    Tier: Early Majority
-    Archetype: The Realist
 
-    🎯 Motivations:
-    - Wellness less
-    - Speed average/good
-    ...
+        https://www.reddit.com/user/Hungry-Move-6603/
+✅ Example Output (snippet)
+
+        Name: Hungry-Move-6603
+        Age: 27
+        Occupation: Student
+        Status: Single
+        Location: Lucknow, India
+        Tier: Early Majority
+        Archetype: The Realist
+    
+        🎯 Motivations:
+        - Wellness less
+        - Speed average/good
+        ...
 
 📌 Citation:
-    - https://reddit.com/r/lucknow/comments/1lwbwu9/... — “Any Tiffin service providing high quality food...”
 
+    - https://reddit.com/r/lucknow/comments/1lwbwu9/... — “Any Tiffin service providing high quality food...”
+    
 
